@@ -184,7 +184,7 @@ static const int32_t s_InvokerIndices[58] =
 	15372,
 	15372,
 	15372,
-	26298,
+	26300,
 	15372,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;

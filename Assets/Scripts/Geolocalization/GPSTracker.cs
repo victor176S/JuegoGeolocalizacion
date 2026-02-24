@@ -21,6 +21,10 @@ public class GPSTracker : MonoBehaviour
         public GameObject combatUI;
         public GameObject panelVictoria;
 
+    [Header("Music")]
+        public AudioSource combatMusic;
+        public AudioSource spawnMusic;
+
     private GameObject spawnedObject;
 
 
@@ -96,13 +100,13 @@ public class GPSTracker : MonoBehaviour
     void LoadMonster()
     {
         /*Cordenadas clase probar*/ 
-        monsters.Add(new Monster { mosnterName = "Fenix", latitude = 37.19224901303922, longitude = -3.6166398805055926, health = 100, defeated = false });
+        //monsters.Add(new Monster { mosnterName = "Fenix", latitude = 37.19224901303922, longitude = -3.6166398805055926, health = 100, defeated = false });
 
 
-        //monsters.Add(new Monster { mosnterName = "Fenix", latitude = 37.19222686616466, longitude = -3.616983154096119, health = 100, defeated = false });
+        monsters.Add(new Monster { mosnterName = "Fenix", latitude = 37.19222686616466, longitude = -3.616983154096119, health = 100, defeated = false });
         monsters.Add(new Monster { mosnterName = "Minotauro", latitude = 37.191878754572755, longitude = -3.617152208305987, health = 150, defeated = false });
-        //monsters.Add(new Monster { mosnterName = "Hidra", latitude = 37.1922275014041, longitude = -3.6169823566711927, health = 130, defeated = false });
-        //monsters.Add(new Monster { mosnterName = "Quimera", latitude = 37.192095371646886, longitude = -3.616837225226872, health = 120, defeated = false });
+        monsters.Add(new Monster { mosnterName = "Hidra", latitude = 37.1922275014041, longitude = -3.6169823566711927, health = 130, defeated = false });
+        monsters.Add(new Monster { mosnterName = "Quimera", latitude = 37.192095371646886, longitude = -3.616837225226872, health = 120, defeated = false });
     }
 
     #endregion
@@ -160,6 +164,8 @@ public class GPSTracker : MonoBehaviour
             Vector3 spawnPosition = hits[0].pose.position;
             Quaternion spawnRotation = hits[0].pose.rotation;
 
+            spawnMusic.Play();
+
             spawnedMonster = Instantiate(
                 monsterPrefabs[currentMonsterIndex],
                 spawnPosition,
@@ -169,6 +175,11 @@ public class GPSTracker : MonoBehaviour
 
             mb = spawnedMonster.GetComponent<MonsterController>();
             mb.Initialize(monsters[currentMonsterIndex].health, combatUI.GetComponentInChildren<TextMeshProUGUI>());
+
+            if (combatMusic != null && !combatMusic.isPlaying)
+            {
+                combatMusic.Play();
+            }
 
 
             //isSpawned = true;

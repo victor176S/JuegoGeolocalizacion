@@ -80,6 +80,7 @@ struct ARFace_t73C068C9C8422F79A858EC41C322D399305B8453;
 struct ARFaceManager_tE5955187C9D7C9C4C4139F522DA0DEA69EFCFD8F;
 struct ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44;
 struct ARTrackable_t1D98417758C08E98A333CDEC0C2C1688CE10B2E0;
+struct AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299;
 struct CancellationTokenSource_tAAE1E0033BCFC233801F8CB4CED5C852B350CB7B;
 struct Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26;
 struct CanvasRenderer_tAB9A55A976C4E3B2B37D0CE5616E5685A8B43860;
@@ -159,18 +160,17 @@ IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5
 IL2CPP_EXTERN_C String_t* _stringLiteral00535A0037D70DB9263AD17490ABE5B76CEE2511;
 IL2CPP_EXTERN_C String_t* _stringLiteral0C10E47675493434D04CD8025C8303AF94F7BA5A;
 IL2CPP_EXTERN_C String_t* _stringLiteral1AF02CEAA44664C2293773288F3FCE2825534530;
-IL2CPP_EXTERN_C String_t* _stringLiteral39F05661E182D745C6EB845CB8F4EB7B22019098;
-IL2CPP_EXTERN_C String_t* _stringLiteral54945951C9B015FD1B0AE432320BD37BD4D86451;
 IL2CPP_EXTERN_C String_t* _stringLiteral5667A05A4F1D3950EB070A87DDBF16DD708B03A9;
+IL2CPP_EXTERN_C String_t* _stringLiteral6EC6EB53B3EBC307B883E85B2EF2AC5ADCD03BFA;
 IL2CPP_EXTERN_C String_t* _stringLiteral71282BCC169FFE780AE267D454A734AFFDFA72AA;
 IL2CPP_EXTERN_C String_t* _stringLiteral7A65EFC5BB52048E35B0D3E2214BCF8CE116440A;
 IL2CPP_EXTERN_C String_t* _stringLiteral84AAC502EC237F2AB14F5F214D3AD4EDFD337CED;
 IL2CPP_EXTERN_C String_t* _stringLiteral943CD73BC7B00B9E2B91FF9ECC30674B1C2DC2FB;
 IL2CPP_EXTERN_C String_t* _stringLiteral9B3E9066AF97E8B87AF01D122A949F70A5DB237E;
 IL2CPP_EXTERN_C String_t* _stringLiteralA1177190C5EBA5329D2CAAEDB1A48CA3384AA9E3;
-IL2CPP_EXTERN_C String_t* _stringLiteralB0761A8DF9B7695169A126F7D7F679B6E2D84BE2;
 IL2CPP_EXTERN_C String_t* _stringLiteralB2523C9E90076CC9DFB35E0BB6518D74A98EDB4E;
 IL2CPP_EXTERN_C String_t* _stringLiteralC049C1B5009A09818DF92333A83F14A5D4EC4827;
+IL2CPP_EXTERN_C String_t* _stringLiteralD087C6DED982F84253D0F12AF8F287B9716C85B3;
 IL2CPP_EXTERN_C String_t* _stringLiteralD17AFCAF5A5D49FB970023104C84373B2DB3272E;
 IL2CPP_EXTERN_C String_t* _stringLiteralDB4D83D6871102EE8099E4F8AF38EB3DFE88EB6B;
 IL2CPP_EXTERN_C String_t* _stringLiteralDDB91D5B0BDD1824A4CC18C279F4CF0A96D4A900;
@@ -1334,6 +1334,9 @@ struct TMP_TextProcessingStack_1_t2DDA00FFC64AF6E3AFD475AB2086D16C34787E0F
 	int32_t ___m_RolloverSize;
 	int32_t ___m_Count;
 };
+struct AudioBehaviour_t2DC0BEF7B020C952F3D2DA5AAAC88501C7EEB941  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
+{
+};
 struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
 {
 	CancellationTokenSource_tAAE1E0033BCFC233801F8CB4CED5C852B350CB7B* ___m_CancellationTokenSource;
@@ -1350,6 +1353,9 @@ struct SubsystemLifecycleManager_3_tF871EF43DE89B354DB5832CC545E7E0EEF19DC8C  : 
 	XRRaycastSubsystem_t48087E79DE9617C7E866875C8DDD3124C9E068B7* ___U3CsubsystemU3Ek__BackingField;
 };
 struct ARTrackable_t1D98417758C08E98A333CDEC0C2C1688CE10B2E0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+};
+struct AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299  : public AudioBehaviour_t2DC0BEF7B020C952F3D2DA5AAAC88501C7EEB941
 {
 };
 struct FaceDetector_t1CDF8FA21E0A19B616715E3C1388E2A003E52E41  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
@@ -1385,8 +1391,9 @@ struct GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3  : public MonoBehavi
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___distanceText;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___combatUI;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelVictoria;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___combatMusic;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___spawnMusic;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___spawnedObject;
-	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___debug;
 	double ___currentLat;
 	double ___currentLon;
 	bool ___isSpawned;
@@ -2241,6 +2248,7 @@ inline ARRaycastHit_tB32B5606815B8A7DF479C00187A852F8D20E3B70 List_1_get_Item_m4
 	return ((  ARRaycastHit_tB32B5606815B8A7DF479C00187A852F8D20E3B70 (*) (List_1_t0754071572EFE7A5C92A59495D2524FC935364E3*, int32_t, const RuntimeMethod*))List_1_get_Item_m443F0D48247776D4257E06597AF794BCF6D8020F_gshared)(__this, ___0_index, method);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Pose_t06BA69EAA6E9FAF60056D519A87D25F54AFE7971 ARRaycastHit_get_pose_m84C13E71E21FE12CBA9AAD98DC28B1E414C9EFFD (ARRaycastHit_tB32B5606815B8A7DF479C00187A852F8D20E3B70* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, const RuntimeMethod* method) ;
 inline GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_original, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_position, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___2_rotation, const RuntimeMethod* method)
 {
 	return ((  GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974, const RuntimeMethod*))Object_Instantiate_TisRuntimeObject_m249A6BA4F2F19C2D3CE217D4D31847DF0EF03EFE_gshared)(___0_original, ___1_position, ___2_rotation, method);
@@ -2255,6 +2263,7 @@ inline TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* GameObject_Get
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController_Initialize_m8A95F06BACD3BC7563CE6E452162AD9A6792FE58 (MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* __this, int32_t ___0_health, TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___1_uiText, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_x, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___1_y, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AudioSource_get_isPlaying_mC203303F2F7146B2C056CB47B9391463FDF408FC (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController_TakeDamage_mDF99D6CBDD92AEF7B64B7E5CC846B31BBB8D7946 (MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* __this, int32_t ___0_damage, const RuntimeMethod* method) ;
 inline void List_1__ctor_m4F2A0A6C4596C9BCD1272193C4B0451E697B9572 (List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* __this, const RuntimeMethod* method)
 {
@@ -2288,7 +2297,7 @@ inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85147
+// Method Definition Index: 85154
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceDetector_OnEnable_m50E9704BB292B871C35EE0730592B3E8184BCADA (FaceDetector_t1CDF8FA21E0A19B616715E3C1388E2A003E52E41* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2309,7 +2318,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceDetector_OnEnable_m50E9704BB292B871C
 		return;
 	}
 }
-// Method Definition Index: 85148
+// Method Definition Index: 85155
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceDetector_OnDisable_m073B2BE2E11B04E68F79A0BB567219B9B54FBCD7 (FaceDetector_t1CDF8FA21E0A19B616715E3C1388E2A003E52E41* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2330,7 +2339,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceDetector_OnDisable_m073B2BE2E11B04E6
 		return;
 	}
 }
-// Method Definition Index: 85149
+// Method Definition Index: 85156
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceDetector_OnFacesChanged_m335E15BFCE8812C09E6323A64A4737CEF8FB7920 (FaceDetector_t1CDF8FA21E0A19B616715E3C1388E2A003E52E41* __this, ARFacesChangedEventArgs_tC05D4423CB2096FF5955C3A0A00056EE2B6301AE ___0_args, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2381,7 +2390,7 @@ IL_003f:
 		return;
 	}
 }
-// Method Definition Index: 85150
+// Method Definition Index: 85157
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceDetector__ctor_m602EA93483CD70C519C49DAEF2F31EDE8C97B4C3 (FaceDetector_t1CDF8FA21E0A19B616715E3C1388E2A003E52E41* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2397,7 +2406,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceDetector__ctor_m602EA93483CD70C519C4
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85151
+// Method Definition Index: 85158
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceJumpController_Update_m86D46B9C3473BB6B968F89FD854EA388D7C32A84 (FaceJumpController_tE322A03096E9CCA2F5848DAD81675E3BB9C4EC7B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2501,7 +2510,7 @@ IL_0073:
 		return;
 	}
 }
-// Method Definition Index: 85152
+// Method Definition Index: 85159
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceJumpController_Jump_m22CFBAE6808D6B23870345E2751B7CE2E4D7F88D (FaceJumpController_tE322A03096E9CCA2F5848DAD81675E3BB9C4EC7B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2543,7 +2552,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceJumpController_Jump_m22CFBAE6808D6B2
 		return;
 	}
 }
-// Method Definition Index: 85153
+// Method Definition Index: 85160
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceJumpController__ctor_mE8D477D71802CC03F9D4E1099B1865CAD52D982D (FaceJumpController_tE322A03096E9CCA2F5848DAD81675E3BB9C4EC7B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2567,7 +2576,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceJumpController__ctor_mE8D477D71802CC
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85154
+// Method Definition Index: 85161
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceRunnerController_Update_m367A029598AD12554D225CDE4D75FD561A9BFFF5 (FaceRunnerController_tCEAFFA8BDF4831E57211E249DB1E19BE48BD2CF9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2671,7 +2680,7 @@ IL_0043:
 		return;
 	}
 }
-// Method Definition Index: 85155
+// Method Definition Index: 85162
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceRunnerController__ctor_mCBE1FB366D11FACF3408B5FAE17055D34DA6014D (FaceRunnerController_tCEAFFA8BDF4831E57211E249DB1E19BE48BD2CF9* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2691,7 +2700,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FaceRunnerController__ctor_mCBE1FB366D11
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85156
+// Method Definition Index: 85163
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Menu_Jugar_m0A56407A7BD1442489AC37E57D9AB642498B8977 (Menu_t818E8DA587A0E558DE9BC83947BABC9A6FDD0C05* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2709,7 +2718,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Menu_Jugar_m0A56407A7BD1442489AC37E57D9A
 		return;
 	}
 }
-// Method Definition Index: 85157
+// Method Definition Index: 85164
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Menu__ctor_mBEF2B96BC9E3D64E020EBE40FEF9CF25E6C3ED00 (Menu_t818E8DA587A0E558DE9BC83947BABC9A6FDD0C05* __this, const RuntimeMethod* method) 
 {
 	{
@@ -2725,7 +2734,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Menu__ctor_mBEF2B96BC9E3D64E020EBE40FEF9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85158
+// Method Definition Index: 85165
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackSpawner_Start_mC229093926F7401A6F7BBD4DBC56E04CFC4FA253 (TrackSpawner_t12783C9AF0BD8B5E723479D829A593CA7C08C84C* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -2759,7 +2768,7 @@ IL_000e:
 		return;
 	}
 }
-// Method Definition Index: 85159
+// Method Definition Index: 85166
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackSpawner_Update_m4A594FF729F8343ED7F218184C30B63AE23BDF30 (TrackSpawner_t12783C9AF0BD8B5E723479D829A593CA7C08C84C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2873,7 +2882,7 @@ IL_0081:
 		return;
 	}
 }
-// Method Definition Index: 85160
+// Method Definition Index: 85167
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackSpawner_SpawnPiece_mE510DF9EF6FD8EBEF8FF6D8C14B62BC78A4A876D (TrackSpawner_t12783C9AF0BD8B5E723479D829A593CA7C08C84C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3053,7 +3062,7 @@ IL_00c7:
 		return;
 	}
 }
-// Method Definition Index: 85161
+// Method Definition Index: 85168
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TrackSpawner_SpawnObstacle_mED7F4B843704B7EA92E2FFFB7609B4A97B1A91FC (TrackSpawner_t12783C9AF0BD8B5E723479D829A593CA7C08C84C* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3112,7 +3121,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TrackSpawner_SpawnObstacle_mED7F4B84370
 		return L_16;
 	}
 }
-// Method Definition Index: 85162
+// Method Definition Index: 85169
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackSpawner_SpawnCollectible_m5EBA3DEB9FCBC9EC5171686717EF1647DE68AB3A (TrackSpawner_t12783C9AF0BD8B5E723479D829A593CA7C08C84C* __this, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___0_parent, Nullable_1_t3D746CBB6123D4569FF4DEA60BC4240F32C6FE75 ___1_occupiedLane, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3211,7 +3220,7 @@ IL_0054:
 		return;
 	}
 }
-// Method Definition Index: 85163
+// Method Definition Index: 85170
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackSpawner_RemovePiece_m3B241708BE5567DF757F27E998E2534751DCF4DE (TrackSpawner_t12783C9AF0BD8B5E723479D829A593CA7C08C84C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3234,7 +3243,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackSpawner_RemovePiece_m3B241708BE5567
 		return;
 	}
 }
-// Method Definition Index: 85164
+// Method Definition Index: 85171
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackSpawner__ctor_m1620A316CB65D1BB0D02DF47C6CCC8F51677E3FD (TrackSpawner_t12783C9AF0BD8B5E723479D829A593CA7C08C84C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3272,7 +3281,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrackSpawner__ctor_m1620A316CB65D1BB0D02
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85165
+// Method Definition Index: 85172
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Start_mC31CF4F40DDEA35C5E39E8C43EC37284AE7C453D (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3313,7 +3322,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Start_mC31CF4F40DDEA35C5E39E8C43E
 		return;
 	}
 }
-// Method Definition Index: 85166
+// Method Definition Index: 85173
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Update_m95E134A5EF1B5164EA281F61D7FA436F59BE3C9F (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3321,7 +3330,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Update_m95E134A5EF1B5164EA281F61D
 		return;
 	}
 }
-// Method Definition Index: 85167
+// Method Definition Index: 85174
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_OnCollisionEnter_mD8FFD58F1755BCB20B74ECDD0BB365677FA639EE (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* ___0_collision, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3355,7 +3364,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 85168
+// Method Definition Index: 85175
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_OnTriggerEnter_m51AE06A67257AFF378594339C9D53201B6104650 (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_other, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3454,7 +3463,7 @@ IL_00b6:
 		return;
 	}
 }
-// Method Definition Index: 85169
+// Method Definition Index: 85176
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_ReiniciarJuego_mEA2E3DA6C5F29ED27138C98615464979E198B75D (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3480,7 +3489,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_ReiniciarJuego_mEA2E3DA6C5F29ED27
 		return;
 	}
 }
-// Method Definition Index: 85170
+// Method Definition Index: 85177
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_VolverMenu_m349A0C86AC94381B1AEAB5765A41927833370280 (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3500,7 +3509,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_VolverMenu_m349A0C86AC94381B1AEAB
 		return;
 	}
 }
-// Method Definition Index: 85171
+// Method Definition Index: 85178
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player__ctor_m0A83E0706592FC871B0CF188B37AFC6649F3D85D (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3518,7 +3527,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player__ctor_m0A83E0706592FC871B0CF188B3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85172
+// Method Definition Index: 85179
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void compassController_Start_m200FD188F9BF9D2F2740A1EF0039CBB676DFD2AF (compassController_t386A449D5F1127C6DDAAB70796B52A2316DC5247* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3536,7 +3545,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void compassController_Start_m200FD188F9BF9D2
 		return;
 	}
 }
-// Method Definition Index: 85173
+// Method Definition Index: 85180
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void compassController_Update_m54E7DDBC4641AE29722BA6C23A772E317F17A360 (compassController_t386A449D5F1127C6DDAAB70796B52A2316DC5247* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3638,7 +3647,7 @@ IL_0029:
 		return;
 	}
 }
-// Method Definition Index: 85174
+// Method Definition Index: 85181
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float compassController_CalculateBearing_mA4CC9CF79CFF30022E47251D8D9F3277C263DE47 (compassController_t386A449D5F1127C6DDAAB70796B52A2316DC5247* __this, double ___0_lat1, double ___1_lon1, double ___2_lat2, double ___3_lon2, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3696,7 +3705,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float compassController_CalculateBearing_mA4C
 		return ((float)(fmod(((double)il2cpp_codegen_add(((double)il2cpp_codegen_multiply(L_19, (57.295780181884766))), (360.0))), (360.0))));
 	}
 }
-// Method Definition Index: 85175
+// Method Definition Index: 85182
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void compassController__ctor_m1CFD89A3ECD9A50BF6A2D54135D5E3907D7D55EA (compassController_t386A449D5F1127C6DDAAB70796B52A2316DC5247* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3712,7 +3721,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void compassController__ctor_m1CFD89A3ECD9A50
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85176
+// Method Definition Index: 85183
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Awake_mCE4D10DB9669A7472153D6F2A10498D4D5B07486 (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3723,7 +3732,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Awake_mCE4D10DB9669A7472153D6
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:40>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:43>
 		GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* L_0 = ((GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3_StaticFields*)il2cpp_codegen_static_fields_for(GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3_il2cpp_TypeInfo_var))->___Instance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -3734,7 +3743,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Awake_mCE4D10DB9669A7472153D6
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:42>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:45>
 		((GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3_StaticFields*)il2cpp_codegen_static_fields_for(GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3_il2cpp_TypeInfo_var))->___Instance = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&((GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3_StaticFields*)il2cpp_codegen_static_fields_for(GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3_il2cpp_TypeInfo_var))->___Instance), (void*)__this);
 		return;
@@ -3742,42 +3751,42 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Awake_mCE4D10DB9669A7472153D6
 
 IL_0014:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:46>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:49>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
 		L_2 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_2, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:48>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:51>
 		return;
 	}
 }
-// Method Definition Index: 85177
+// Method Definition Index: 85184
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Start_m2DBF76153F47A4A6A59063283698D1365F32EED8 (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:53>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:56>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___panelVictoria;
 		NullCheck(L_0);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_0, (bool)0, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:54>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:57>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___combatUI;
 		NullCheck(L_1);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_1, (bool)0, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:55>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:58>
 		GPSTracker_StartGPS_m01A6DD576C250DB1BBEEE7D7CAAA6DC8E7F4010E(__this, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:56>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:59>
 		GPSTracker_LoadMonster_m0E4B940F01090FA85DFE99D5EC68A8F3E30DD9FC(__this, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:57>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:60>
 		return;
 	}
 }
-// Method Definition Index: 85178
+// Method Definition Index: 85185
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Update_mAA674EDF14E78B406377A21093622CEC8C576240 (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:62>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:65>
 		GPSTracker_UpdateGPS_mCCFE254268B60FF3BDB8AB9BF7000BF4D0DC3835(__this, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:64>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:67>
 		LocationService_tF2F2720FE2C07562EBFD128889F9A99F4B41B1B2* L_0;
 		L_0 = Input_get_location_m1D1FA0938E5B83C46A666CE78D95A58B39164DB5(NULL);
 		NullCheck(L_0);
@@ -3789,17 +3798,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Update_mAA674EDF14E78B406377A
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:66>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:69>
 		GPSTracker_CheckMonsterDistance_m7D1CDF4204F75C95F37768BFB010B94650ECF39B(__this, NULL);
 	}
 
 IL_0019:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:69>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:72>
 		return;
 	}
 }
-// Method Definition Index: 85179
+// Method Definition Index: 85186
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_StartGPS_m01A6DD576C250DB1BBEEE7D7CAAA6DC8E7F4010E (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3809,7 +3818,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_StartGPS_m01A6DD576C250DB1BBE
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:75>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:78>
 		LocationService_tF2F2720FE2C07562EBFD128889F9A99F4B41B1B2* L_0;
 		L_0 = Input_get_location_m1D1FA0938E5B83C46A666CE78D95A58B39164DB5(NULL);
 		NullCheck(L_0);
@@ -3821,26 +3830,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_StartGPS_m01A6DD576C250DB1BBE
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:77>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:80>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_2 = __this->___gpsStatusText;
 		NullCheck(L_2);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_2, _stringLiteral9B3E9066AF97E8B87AF01D122A949F70A5DB237E);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:78>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:81>
 		return;
 	}
 
 IL_001d:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:81>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:84>
 		LocationService_tF2F2720FE2C07562EBFD128889F9A99F4B41B1B2* L_3;
 		L_3 = Input_get_location_m1D1FA0938E5B83C46A666CE78D95A58B39164DB5(NULL);
 		NullCheck(L_3);
 		LocationService_Start_mC2A90619923D4BEB5F9B5CCD95F317B98D67AF3A(L_3, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:82>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:85>
 		return;
 	}
 }
-// Method Definition Index: 85180
+// Method Definition Index: 85187
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_UpdateGPS_mCCFE254268B60FF3BDB8AB9BF7000BF4D0DC3835 (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3852,7 +3861,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_UpdateGPS_mCCFE254268B60FF3BD
 	LocationInfo_tBFD49220A54B71CDF564F61822F7B8D524465441 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:86>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:89>
 		LocationService_tF2F2720FE2C07562EBFD128889F9A99F4B41B1B2* L_0;
 		L_0 = Input_get_location_m1D1FA0938E5B83C46A666CE78D95A58B39164DB5(NULL);
 		NullCheck(L_0);
@@ -3864,7 +3873,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_UpdateGPS_mCCFE254268B60FF3BD
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:88>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:91>
 		LocationService_tF2F2720FE2C07562EBFD128889F9A99F4B41B1B2* L_2;
 		L_2 = Input_get_location_m1D1FA0938E5B83C46A666CE78D95A58B39164DB5(NULL);
 		NullCheck(L_2);
@@ -3874,7 +3883,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_UpdateGPS_mCCFE254268B60FF3BD
 		float L_4;
 		L_4 = LocationInfo_get_latitude_mAF0A46443555AF18EA3C516292CB92B1669CA863((&V_0), NULL);
 		__this->___currentLat = ((double)L_4);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:89>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:92>
 		LocationService_tF2F2720FE2C07562EBFD128889F9A99F4B41B1B2* L_5;
 		L_5 = Input_get_location_m1D1FA0938E5B83C46A666CE78D95A58B39164DB5(NULL);
 		NullCheck(L_5);
@@ -3884,7 +3893,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_UpdateGPS_mCCFE254268B60FF3BD
 		float L_7;
 		L_7 = LocationInfo_get_longitude_mCB720DD0E139B7C614F78D40595E1BBF1F5433A2((&V_0), NULL);
 		__this->___currentLon = ((double)L_7);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:90>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:93>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_8 = __this->___gpsStatusText;
 		double L_9 = __this->___currentLat;
 		double L_10 = L_9;
@@ -3900,11 +3909,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_UpdateGPS_mCCFE254268B60FF3BD
 
 IL_006a:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:92>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:95>
 		return;
 	}
 }
-// Method Definition Index: 85181
+// Method Definition Index: 85188
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_LoadMonster_m0E4B940F01090FA85DFE99D5EC68A8F3E30DD9FC (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3913,11 +3922,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_LoadMonster_m0E4B940F01090FA8
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_Add_m03C50A2ECA72C6131CF1E5EAC0C7D79DD7311B91_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1AF02CEAA44664C2293773288F3FCE2825534530);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6EC6EB53B3EBC307B883E85B2EF2AC5ADCD03BFA);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB2523C9E90076CC9DFB35E0BB6518D74A98EDB4E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD087C6DED982F84253D0F12AF8F287B9716C85B3);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:100>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:106>
 		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_0 = __this->___monsters;
 		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_1 = (Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE*)il2cpp_codegen_object_new(Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE_il2cpp_TypeInfo_var);
 		Monster__ctor_m4E10FC18FF41A1D3156A7AC924B06AD7F3882E04(L_1, NULL);
@@ -3927,10 +3938,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_LoadMonster_m0E4B940F01090FA8
 		Il2CppCodeGenWriteBarrier((void**)(&L_2->___mosnterName), (void*)_stringLiteral1AF02CEAA44664C2293773288F3FCE2825534530);
 		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_3 = L_2;
 		NullCheck(L_3);
-		L_3->___latitude = (37.192249013039223);
+		L_3->___latitude = (37.19222686616466);
 		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_4 = L_3;
 		NullCheck(L_4);
-		L_4->___longitude = (-3.6166398805055926);
+		L_4->___longitude = (-3.6169831540961188);
 		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_5 = L_4;
 		NullCheck(L_5);
 		L_5->___health = ((int32_t)100);
@@ -3939,7 +3950,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_LoadMonster_m0E4B940F01090FA8
 		L_6->___defeated = (bool)0;
 		NullCheck(L_0);
 		List_1_Add_m03C50A2ECA72C6131CF1E5EAC0C7D79DD7311B91_inline(L_0, L_6, List_1_Add_m03C50A2ECA72C6131CF1E5EAC0C7D79DD7311B91_RuntimeMethod_var);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:104>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:107>
 		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_7 = __this->___monsters;
 		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_8 = (Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE*)il2cpp_codegen_object_new(Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE_il2cpp_TypeInfo_var);
 		Monster__ctor_m4E10FC18FF41A1D3156A7AC924B06AD7F3882E04(L_8, NULL);
@@ -3961,11 +3972,55 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_LoadMonster_m0E4B940F01090FA8
 		L_13->___defeated = (bool)0;
 		NullCheck(L_7);
 		List_1_Add_m03C50A2ECA72C6131CF1E5EAC0C7D79DD7311B91_inline(L_7, L_13, List_1_Add_m03C50A2ECA72C6131CF1E5EAC0C7D79DD7311B91_RuntimeMethod_var);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:107>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:108>
+		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_14 = __this->___monsters;
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_15 = (Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE*)il2cpp_codegen_object_new(Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE_il2cpp_TypeInfo_var);
+		Monster__ctor_m4E10FC18FF41A1D3156A7AC924B06AD7F3882E04(L_15, NULL);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_16 = L_15;
+		NullCheck(L_16);
+		L_16->___mosnterName = _stringLiteralD087C6DED982F84253D0F12AF8F287B9716C85B3;
+		Il2CppCodeGenWriteBarrier((void**)(&L_16->___mosnterName), (void*)_stringLiteralD087C6DED982F84253D0F12AF8F287B9716C85B3);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_17 = L_16;
+		NullCheck(L_17);
+		L_17->___latitude = (37.192227501404098);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_18 = L_17;
+		NullCheck(L_18);
+		L_18->___longitude = (-3.6169823566711927);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_19 = L_18;
+		NullCheck(L_19);
+		L_19->___health = ((int32_t)130);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_20 = L_19;
+		NullCheck(L_20);
+		L_20->___defeated = (bool)0;
+		NullCheck(L_14);
+		List_1_Add_m03C50A2ECA72C6131CF1E5EAC0C7D79DD7311B91_inline(L_14, L_20, List_1_Add_m03C50A2ECA72C6131CF1E5EAC0C7D79DD7311B91_RuntimeMethod_var);
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:109>
+		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_21 = __this->___monsters;
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_22 = (Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE*)il2cpp_codegen_object_new(Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE_il2cpp_TypeInfo_var);
+		Monster__ctor_m4E10FC18FF41A1D3156A7AC924B06AD7F3882E04(L_22, NULL);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_23 = L_22;
+		NullCheck(L_23);
+		L_23->___mosnterName = _stringLiteral6EC6EB53B3EBC307B883E85B2EF2AC5ADCD03BFA;
+		Il2CppCodeGenWriteBarrier((void**)(&L_23->___mosnterName), (void*)_stringLiteral6EC6EB53B3EBC307B883E85B2EF2AC5ADCD03BFA);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_24 = L_23;
+		NullCheck(L_24);
+		L_24->___latitude = (37.192095371646886);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_25 = L_24;
+		NullCheck(L_25);
+		L_25->___longitude = (-3.6168372252268721);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_26 = L_25;
+		NullCheck(L_26);
+		L_26->___health = ((int32_t)120);
+		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_27 = L_26;
+		NullCheck(L_27);
+		L_27->___defeated = (bool)0;
+		NullCheck(L_21);
+		List_1_Add_m03C50A2ECA72C6131CF1E5EAC0C7D79DD7311B91_inline(L_21, L_27, List_1_Add_m03C50A2ECA72C6131CF1E5EAC0C7D79DD7311B91_RuntimeMethod_var);
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:110>
 		return;
 	}
 }
-// Method Definition Index: 85182
+// Method Definition Index: 85189
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_CheckMonsterDistance_m7D1CDF4204F75C95F37768BFB010B94650ECF39B (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3979,7 +4034,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_CheckMonsterDistance_m7D1CDF4
 	Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* V_0 = NULL;
 	double V_1 = 0.0;
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:115>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:118>
 		int32_t L_0 = __this->___currentMonsterIndex;
 		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_1 = __this->___monsters;
 		NullCheck(L_1);
@@ -3991,20 +4046,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_CheckMonsterDistance_m7D1CDF4
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:115>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:118>
 		return;
 	}
 
 IL_0014:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:117>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:120>
 		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_3 = __this->___monsters;
 		int32_t L_4 = __this->___currentMonsterIndex;
 		NullCheck(L_3);
 		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_5;
 		L_5 = List_1_get_Item_m550B1FEEB24B5FE9CF1AB6440446A69A6A2BC000(L_3, L_4, List_1_get_Item_m550B1FEEB24B5FE9CF1AB6440446A69A6A2BC000_RuntimeMethod_var);
 		V_0 = L_5;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:119>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:122>
 		double L_6 = __this->___currentLat;
 		double L_7 = __this->___currentLon;
 		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_8 = V_0;
@@ -4016,7 +4071,7 @@ IL_0014:
 		double L_12;
 		L_12 = GPSTracker_CalculateDistance_m88A4CCF53CD4060616B8B2CA5ADBEF5D82BE3FD2(__this, L_6, L_7, L_9, L_11, NULL);
 		V_1 = L_12;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:120>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:123>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_13 = __this->___distanceText;
 		Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* L_14 = V_0;
 		NullCheck(L_14);
@@ -4028,7 +4083,7 @@ IL_0014:
 		L_19 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteralD17AFCAF5A5D49FB970023104C84373B2DB3272E, L_15, L_18, NULL);
 		NullCheck(L_13);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_13, L_19);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:122>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:125>
 		double L_20 = V_1;
 		float L_21 = __this->___detectionRadius;
 		if ((!(((double)L_20) <= ((double)((double)L_21)))))
@@ -4044,17 +4099,17 @@ IL_0014:
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:124>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:127>
 		GPSTracker_SpawnMonsterInAr_mBB66A7A5C91BB7BB45A6E36197EAC8A03E227809(__this, NULL);
 	}
 
 IL_007e:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:126>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:129>
 		return;
 	}
 }
-// Method Definition Index: 85183
+// Method Definition Index: 85190
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double GPSTracker_CalculateDistance_m88A4CCF53CD4060616B8B2CA5ADBEF5D82BE3FD2 (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, double ___0_lat1, double ___1_lon1, double ___2_lat2, double ___3_lon2, const RuntimeMethod* method) 
 {
 	double V_0 = 0.0;
@@ -4062,22 +4117,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double GPSTracker_CalculateDistance_m88A4CCF5
 	double V_2 = 0.0;
 	double V_3 = 0.0;
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:129>
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:130>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:132>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:133>
 		double L_0 = ___2_lat2;
 		double L_1 = ___0_lat1;
 		double L_2;
 		L_2 = GPSTracker_ToRadians_mFD451212384249A4758C8FA2516A60087F00D251(__this, ((double)il2cpp_codegen_subtract(L_0, L_1)), NULL);
 		V_0 = L_2;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:131>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:134>
 		double L_3 = ___3_lon2;
 		double L_4 = ___1_lon1;
 		double L_5;
 		L_5 = GPSTracker_ToRadians_mFD451212384249A4758C8FA2516A60087F00D251(__this, ((double)il2cpp_codegen_subtract(L_3, L_4)), NULL);
 		V_1 = L_5;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:133>
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:134>
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:135>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:136>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:137>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:138>
 		double L_6 = V_0;
 		float L_7;
 		L_7 = sinf(((float)(((float)L_6)/(2.0f))));
@@ -4101,7 +4156,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double GPSTracker_CalculateDistance_m88A4CCF5
 		float L_19;
 		L_19 = sinf(((float)(((float)L_18)/(2.0f))));
 		V_2 = ((double)((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(L_7, L_9)), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_12, L_15)), L_17)), L_19)))));
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:137>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:140>
 		double L_20 = V_2;
 		float L_21;
 		L_21 = sqrtf(((float)L_20));
@@ -4111,21 +4166,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double GPSTracker_CalculateDistance_m88A4CCF5
 		float L_24;
 		L_24 = atan2f(L_21, L_23);
 		V_3 = ((double)((float)il2cpp_codegen_multiply((2.0f), L_24)));
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:138>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:141>
 		double L_25 = V_3;
 		return ((double)il2cpp_codegen_multiply((6371000.0), L_25));
 	}
 }
-// Method Definition Index: 85184
+// Method Definition Index: 85191
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double GPSTracker_ToRadians_mFD451212384249A4758C8FA2516A60087F00D251 (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, double ___0_degrees, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:141>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:144>
 		double L_0 = ___0_degrees;
 		return ((double)(((double)il2cpp_codegen_multiply(L_0, (3.1415927410125732)))/(180.0)));
 	}
 }
-// Method Definition Index: 85185
+// Method Definition Index: 85192
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_SpawnMonsterInAr_mBB66A7A5C91BB7BB45A6E36197EAC8A03E227809 (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4139,9 +4194,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_SpawnMonsterInAr_mBB66A7A5C91
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t0754071572EFE7A5C92A59495D2524FC935364E3_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral39F05661E182D745C6EB845CB8F4EB7B22019098);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral54945951C9B015FD1B0AE432320BD37BD4D86451);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB0761A8DF9B7695169A126F7D7F679B6E2D84BE2);
 		s_Il2CppMethodInitialized = true;
 	}
 	List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* V_0 = NULL;
@@ -4152,7 +4204,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_SpawnMonsterInAr_mBB66A7A5C91
 	ARRaycastHit_tB32B5606815B8A7DF479C00187A852F8D20E3B70 V_3;
 	memset((&V_3), 0, sizeof(V_3));
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:150>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:153>
 		bool L_0 = __this->___isSpawned;
 		if (!L_0)
 		{
@@ -4160,22 +4212,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_SpawnMonsterInAr_mBB66A7A5C91
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:150>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:153>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:152>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:155>
 		__this->___isSpawned = (bool)1;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:154>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:157>
 		List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* L_1 = (List_1_t0754071572EFE7A5C92A59495D2524FC935364E3*)il2cpp_codegen_object_new(List_1_t0754071572EFE7A5C92A59495D2524FC935364E3_il2cpp_TypeInfo_var);
 		List_1__ctor_m6B5722DD0A8C0D3D4A1656C5A5E8D0A784DC85B9(L_1, List_1__ctor_m6B5722DD0A8C0D3D4A1656C5A5E8D0A784DC85B9_RuntimeMethod_var);
 		V_0 = L_1;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:156>
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:157>
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:158>
 		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:159>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:160>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:161>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:162>
 		ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44* L_2 = __this->___raycastManager;
 		int32_t L_3;
 		L_3 = Screen_get_width_mF608FF3252213E7EFA1F0D2F744C28110E9E5AC9(NULL);
@@ -4190,11 +4242,11 @@ IL_0009:
 		L_7 = ARRaycastManager_Raycast_mF56A1E2D7CBB61131E4D844ADA9D0CC1F6B53EAC(L_2, L_5, L_6, ((int32_t)15), NULL);
 		if (!L_7)
 		{
-			goto IL_00fc;
+			goto IL_00fd;
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:161>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:164>
 		List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* L_8 = V_0;
 		NullCheck(L_8);
 		ARRaycastHit_tB32B5606815B8A7DF479C00187A852F8D20E3B70 L_9;
@@ -4204,7 +4256,7 @@ IL_0009:
 		L_10 = ARRaycastHit_get_pose_m84C13E71E21FE12CBA9AAD98DC28B1E414C9EFFD((&V_3), NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_11 = L_10.___position;
 		V_1 = L_11;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:162>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:165>
 		List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* L_12 = V_0;
 		NullCheck(L_12);
 		ARRaycastHit_tB32B5606815B8A7DF479C00187A852F8D20E3B70 L_13;
@@ -4214,35 +4266,35 @@ IL_0009:
 		L_14 = ARRaycastHit_get_pose_m84C13E71E21FE12CBA9AAD98DC28B1E414C9EFFD((&V_3), NULL);
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_15 = L_14.___rotation;
 		V_2 = L_15;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:164>
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:165>
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:166>
 		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:167>
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:168>
-		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_16 = __this->___monsterPrefabs;
-		int32_t L_17 = __this->___currentMonsterIndex;
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_16 = __this->___spawnMusic;
 		NullCheck(L_16);
-		int32_t L_18 = L_17;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_19 = (L_16)->GetAt(static_cast<il2cpp_array_size_t>(L_18));
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_20 = V_1;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_21 = V_2;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22;
-		L_22 = Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4(L_19, L_20, L_21, Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4_RuntimeMethod_var);
-		__this->___spawnedMonster = L_22;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___spawnedMonster), (void*)L_22);
+		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_16, NULL);
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:169>
 		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:170>
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_23 = __this->___debug;
-		NullCheck(L_23);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_23, _stringLiteral39F05661E182D745C6EB845CB8F4EB7B22019098);
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:171>
 		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:172>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:173>
+		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_17 = __this->___monsterPrefabs;
+		int32_t L_18 = __this->___currentMonsterIndex;
+		NullCheck(L_17);
+		int32_t L_19 = L_18;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20 = (L_17)->GetAt(static_cast<il2cpp_array_size_t>(L_19));
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_21 = V_1;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_22 = V_2;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_23;
+		L_23 = Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4(L_20, L_21, L_22, Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4_RuntimeMethod_var);
+		__this->___spawnedMonster = L_23;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___spawnedMonster), (void*)L_23);
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:176>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = __this->___spawnedMonster;
 		NullCheck(L_24);
 		MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* L_25;
 		L_25 = GameObject_GetComponent_TisMonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7_m1AF912D6975783AD672DD37FB6D54BDD82D6FCBE(L_24, GameObject_GetComponent_TisMonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7_m1AF912D6975783AD672DD37FB6D54BDD82D6FCBE_RuntimeMethod_var);
 		__this->___mb = L_25;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___mb), (void*)L_25);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:173>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:177>
 		MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* L_26 = __this->___mb;
 		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_27 = __this->___monsters;
 		int32_t L_28 = __this->___currentMonsterIndex;
@@ -4257,30 +4309,50 @@ IL_0009:
 		L_32 = GameObject_GetComponentInChildren_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m58413DB121C1F732459A1F2B911AB85B1BF21AFB(L_31, GameObject_GetComponentInChildren_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m58413DB121C1F732459A1F2B911AB85B1BF21AFB_RuntimeMethod_var);
 		NullCheck(L_26);
 		MonsterController_Initialize_m8A95F06BACD3BC7563CE6E452162AD9A6792FE58(L_26, L_30, L_32, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:175>
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_33 = __this->___debug;
-		NullCheck(L_33);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_33, _stringLiteral54945951C9B015FD1B0AE432320BD37BD4D86451);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:178>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_34 = __this->___combatUI;
-		NullCheck(L_34);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_34, (bool)1, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:180>
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_35 = __this->___debug;
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:179>
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_33 = __this->___combatMusic;
+		bool L_34;
+		L_34 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_33, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_34)
+		{
+			goto IL_00f0;
+		}
+	}
+	{
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_35 = __this->___combatMusic;
 		NullCheck(L_35);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_35, _stringLiteralB0761A8DF9B7695169A126F7D7F679B6E2D84BE2);
+		bool L_36;
+		L_36 = AudioSource_get_isPlaying_mC203303F2F7146B2C056CB47B9391463FDF408FC(L_35, NULL);
+		if (L_36)
+		{
+			goto IL_00f0;
+		}
+	}
+	{
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:181>
+		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_37 = __this->___combatMusic;
+		NullCheck(L_37);
+		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_37, NULL);
+	}
+
+IL_00f0:
+	{
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:186>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_38 = __this->___combatUI;
+		NullCheck(L_38);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_38, (bool)1, NULL);
 		return;
 	}
 
-IL_00fc:
+IL_00fd:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:184>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:191>
 		__this->___isSpawned = (bool)0;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:186>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:193>
 		return;
 	}
 }
-// Method Definition Index: 85186
+// Method Definition Index: 85193
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Shoot_m9CC0BB7CBD5FBE6E955EB05B2E007192884F5E26 (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4291,7 +4363,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Shoot_m9CC0BB7CBD5FBE6E955EB0
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:194>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:201>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___spawnedMonster;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -4302,7 +4374,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Shoot_m9CC0BB7CBD5FBE6E955EB0
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:196>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:203>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___spawnedMonster;
 		NullCheck(L_2);
 		MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* L_3;
@@ -4313,11 +4385,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_Shoot_m9CC0BB7CBD5FBE6E955EB0
 
 IL_0020:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:198>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:205>
 		return;
 	}
 }
-// Method Definition Index: 85187
+// Method Definition Index: 85194
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_MonsterDefeated_m5D5062044316D4D8E493A0A2F6BA275A5E7CF06A (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4329,7 +4401,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_MonsterDefeated_m5D5062044316
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:202>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:209>
 		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_0 = __this->___monsters;
 		int32_t L_1 = __this->___currentMonsterIndex;
 		NullCheck(L_0);
@@ -4337,23 +4409,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_MonsterDefeated_m5D5062044316
 		L_2 = List_1_get_Item_m550B1FEEB24B5FE9CF1AB6440446A69A6A2BC000(L_0, L_1, List_1_get_Item_m550B1FEEB24B5FE9CF1AB6440446A69A6A2BC000_RuntimeMethod_var);
 		NullCheck(L_2);
 		L_2->___defeated = (bool)1;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:204>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:211>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___spawnedMonster;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_3, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:205>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:212>
 		__this->___spawnedMonster = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___spawnedMonster), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:207>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:214>
 		__this->___isSpawned = (bool)0;
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:208>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:215>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = __this->___combatUI;
 		NullCheck(L_4);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_4, (bool)0, NULL);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:210>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:217>
 		int32_t L_5 = __this->___currentMonsterIndex;
 		__this->___currentMonsterIndex = ((int32_t)il2cpp_codegen_add(L_5, 1));
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:212>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:219>
 		int32_t L_6 = __this->___currentMonsterIndex;
 		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_7 = __this->___monsters;
 		NullCheck(L_7);
@@ -4365,7 +4437,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_MonsterDefeated_m5D5062044316
 		}
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:214>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:221>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->___panelVictoria;
 		NullCheck(L_9);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_9, (bool)1, NULL);
@@ -4373,11 +4445,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker_MonsterDefeated_m5D5062044316
 
 IL_0069:
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:217>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:224>
 		return;
 	}
 }
-// Method Definition Index: 85188
+// Method Definition Index: 85195
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker__ctor_mC339952E520F4CB4BDBDC09A755A62E94F0FAC8E (GPSTracker_tF30CCF2CDF7BD2E9EC7BF1D5AD6B1AE02C6113F3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4388,9 +4460,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker__ctor_mC339952E520F4CB4BDBDC0
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:32>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:35>
 		__this->___detectionRadius = (15.0f);
-		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:34>
+		//<source_info:C:/Users/Jorge/Documents/Games/ARFoundation/Assets/Scripts/Geolocalization/GPSTracker.cs:37>
 		List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3* L_0 = (List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3*)il2cpp_codegen_object_new(List_1_tBEDB6660DD4502A479F370D4BEA942FDF8F6B4A3_il2cpp_TypeInfo_var);
 		List_1__ctor_m4F2A0A6C4596C9BCD1272193C4B0451E697B9572(L_0, List_1__ctor_m4F2A0A6C4596C9BCD1272193C4B0451E697B9572_RuntimeMethod_var);
 		__this->___monsters = L_0;
@@ -4407,7 +4479,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GPSTracker__ctor_mC339952E520F4CB4BDBDC0
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85189
+// Method Definition Index: 85196
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Monster__ctor_m4E10FC18FF41A1D3156A7AC924B06AD7F3882E04 (Monster_t9705FB6639B59DB9BC6E59EEA39938C4E6A063FE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4423,7 +4495,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Monster__ctor_m4E10FC18FF41A1D3156A7AC92
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85190
+// Method Definition Index: 85197
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController_Initialize_m8A95F06BACD3BC7563CE6E452162AD9A6792FE58 (MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* __this, int32_t ___0_health, TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___1_uiText, const RuntimeMethod* method) 
 {
 	{
@@ -4443,7 +4515,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController_Initialize_m8A95F06BAC
 		return;
 	}
 }
-// Method Definition Index: 85191
+// Method Definition Index: 85198
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController_TakeDamage_mDF99D6CBDD92AEF7B64B7E5CC846B31BBB8D7946 (MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* __this, int32_t ___0_damage, const RuntimeMethod* method) 
 {
 	{
@@ -4471,7 +4543,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 85192
+// Method Definition Index: 85199
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController_UpdateHealthUI_mB3D6248E99350A0F946EE49A110E6F6F76115E2E (MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4513,7 +4585,7 @@ IL_0039:
 		return;
 	}
 }
-// Method Definition Index: 85193
+// Method Definition Index: 85200
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController_Die_m9220DF5C70CF3F4EBF70423414FB2C2CAB88E921 (MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4537,7 +4609,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController_Die_m9220DF5C70CF3F4EB
 		return;
 	}
 }
-// Method Definition Index: 85194
+// Method Definition Index: 85201
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController__ctor_mFC56EA40326173311DB16C76A9205CDD2976F02A (MonsterController_t244780C765AF448D05CF38CCE482669DBDD516E7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4555,7 +4627,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonsterController__ctor_mFC56EA403261733
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85195
+// Method Definition Index: 85202
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Start_m4B72D52C7CD3204FAA7BDE500532F85AB97FD122 (SceneManagerGeolocalizacion_tB8AC1CB52E13C1170FD7A2F33D7F77F1012A8424* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4563,7 +4635,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Start_m4B72D
 		return;
 	}
 }
-// Method Definition Index: 85196
+// Method Definition Index: 85203
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Update_mB6D445C001AACE78C66EC1B78CD0473B690672E8 (SceneManagerGeolocalizacion_tB8AC1CB52E13C1170FD7A2F33D7F77F1012A8424* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4571,7 +4643,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Update_mB6D4
 		return;
 	}
 }
-// Method Definition Index: 85197
+// Method Definition Index: 85204
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Menu_mB1270D9BA886D7B73FB96A3B3921A86F9A38B382 (SceneManagerGeolocalizacion_tB8AC1CB52E13C1170FD7A2F33D7F77F1012A8424* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4589,7 +4661,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Menu_mB1270D
 		return;
 	}
 }
-// Method Definition Index: 85198
+// Method Definition Index: 85205
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Jugar_m8C76F9263C9C7D095880ED958BF3124FD8509269 (SceneManagerGeolocalizacion_tB8AC1CB52E13C1170FD7A2F33D7F77F1012A8424* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4607,7 +4679,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Jugar_m8C76F
 		return;
 	}
 }
-// Method Definition Index: 85199
+// Method Definition Index: 85206
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Instrucciones_m1623091AF11CF71CD34F1EC1084F6600911F00B3 (SceneManagerGeolocalizacion_tB8AC1CB52E13C1170FD7A2F33D7F77F1012A8424* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4625,7 +4697,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion_Instruccione
 		return;
 	}
 }
-// Method Definition Index: 85200
+// Method Definition Index: 85207
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion__ctor_mD1F77241977E17DBD84F6D3EBF7F2E380B14851A (SceneManagerGeolocalizacion_tB8AC1CB52E13C1170FD7A2F33D7F77F1012A8424* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4641,7 +4713,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManagerGeolocalizacion__ctor_mD1F77
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85201
+// Method Definition Index: 85208
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4657,7 +4729,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Readme__ctor_m69C325C4C171DCB0312B646A90
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85202
+// Method Definition Index: 85209
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4673,7 +4745,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Section__ctor_m5F732533E4DFC0167D965E5F5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 85203
+// Method Definition Index: 85210
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC90C99D73A3E UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4707,7 +4779,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC
 		return L_6;
 	}
 }
-// Method Definition Index: 85204
+// Method Definition Index: 85211
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tC95F24D0C6E6B77389433852BB389F39C692926E* __this, const RuntimeMethod* method) 
 {
 	{
